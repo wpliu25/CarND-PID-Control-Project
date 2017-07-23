@@ -13,9 +13,16 @@ public:
   /*
   * Coefficients
   */ 
-  double Kp;
-  double Ki;
-  double Kd;
+  double Kp_;
+  double Ki_;
+  double Kd_;
+
+  /*
+  * CTEs
+  */
+  double prev_cte_;
+  double int_cte_;
+  double cte_;
 
   /*
   * Constructor

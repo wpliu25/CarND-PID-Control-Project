@@ -29,11 +29,15 @@ void PID::Init(double Kp, double Ki, double Kd) {
 void PID::UpdateError(double cte) {
 
     // update ctes
+    //  check if it is the initial prev_cte
     if(prev_cte_ == numeric_limits<double>::max())
         prev_cte_ = cte;
+    //  proportional
     cte_ = cte;
+    //  differential
     double diff_cte = cte_ - prev_cte_;
     prev_cte_ = cte;
+    //  integral
     int_cte_ += cte;
 
     // update errors

@@ -1,0 +1,12 @@
+Reflection:
+===========
+I. P, I, D
+Proportional (P), integral (I) and differential (D) controllers were implemented as learned in the lesson. Without 'I' and 'D' the steering of the car would overshoot. Without 'I' the car would not remain as close to the center of the lane as the final result.
+
+
+II. Hyperparmeters
+Final hyperparameters were tuned manually. Changing Ki (tau integral) did not see to have affect on the performance. This seems to indicate a small, if any, systemic bias that 'Ki' would need to compensate.
+	
+
+III. Additional
+I also implemented a 'throttle_pid'. This controller kicks in if we have a 'steer_value' larger than 0.1 and are up to 'speed' larger than 20.0. The idea is to slow down the vehicle when we have large corrections and large speeds similar to human-controlled driving so that passengers are not feeling large centripital forces. The addition of this controller seems to work well on large turns where throttling is lowered than 0.3. The implementation can be further improved with parameter tuning.
